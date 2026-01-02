@@ -1,0 +1,111 @@
+/* Control / Actuators */
+
+.fanPin, .bulbLedPin, .pumpPin, .autobotPin {
+    position: fixed;
+    right: 20px;
+    font-size: 20px;
+    font-weight: bold;
+    color: black;
+    background-color: #19398940; /* Light purple background */
+    border: 2px solid #193989;
+    padding: 5px 10px;
+    border-radius: 10px;
+    font-family: Arial, sans-serif;
+    z-index: 9999;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: right;
+}
+
+.pumpPin {
+    bottom: 180px;
+}
+.bulbLedPin {
+    bottom: 130px;
+}
+.fanPin {
+    bottom: 80px;
+}
+.autobotPin {
+    bottom: 30px;
+}
+
+.pumpPin:hover, .bulbLedPin:hover, .fanPin:hover, .autobotPin:hover, .cameraPin:hover {
+    /* background-color: #a869e6; */
+    background-color: #193989;
+    color: white;
+}
+
+/* FOR CAMERA */
+.camera-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 100%;
+}
+
+#camera-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+    border: 2px solid white;
+}
+
+.camera-info {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 12px;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.camera-info p {
+    margin: 4px 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.camera-info span {
+    font-weight: bold;
+}
+
+/* Loading state for camera button */
+.cameraPin.loading {
+    background-color: #193989;
+    /* color: white; */
+    cursor: wait;
+}
+
+@media (max-width: 600px) {
+    .pumpPin, .bulbLedPin, .fanPin, .autobotPin, .cameraPin{
+        right: 10px;
+        font-size: 16px;
+        padding: 2px 8px;
+    }
+    .pumpPin {
+        bottom: 150px;
+    }
+    .bulbLedPin {
+        bottom: 115px;
+    }
+    .fanPin {
+        bottom: 80px;
+    }
+    .autobotPin {
+        bottom: 45px;
+    }
+
+    .cameraPin {
+        position: fixed;
+        bottom: 10px;
+        font-weight: bold;
+        color: black;
+        background-color: #2a4b9d; /* Light purple background */
+        border: 2px solid #193989;
+        border-radius: 10px;
+        font-family: Arial, sans-serif;
+        z-index: 9999;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        text-align: right;
+    }
+}

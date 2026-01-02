@@ -1,0 +1,344 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Pixelify Sans", sans-serif;
+}
+
+/* Experience */
+#experience{
+    position:fixed;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+}
+
+#experience-canvas{
+    width: 100%;
+    height: 100%;
+}
+
+/* Utilities */
+.hidden{
+    display: none;
+}
+
+
+/* Modal */
+.modal-bg-overlay {
+  z-index: 750;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+}
+
+.modal {
+    z-index: 999;
+    position: absolute ;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    max-width: 800px;
+    /* background-color: #be98e4; */
+    background-color: #2a4b9d;
+    border: 2px solid #fff;
+    color: #fff;
+    border-radius: 6px;
+}
+
+.modal-wrapper{
+    padding: 5px
+}
+
+.modal-header{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-bottom: 12px;
+    border-bottom: 2px solid #fff;
+    margin-bottom: 12px;
+}
+
+.modal-exit-button {
+  /* border: 3px solid #be98e4; */
+  border: 3px solid #2a4b9d;
+  border-radius: 6px;
+  padding: 8px 10px;
+  background-color: white;
+  color: #2a4b9d;
+  font-weight: bold;
+  cursor: pointer;
+}
+.modal-exit-button:hover {
+    background-color: #2a4b9d;
+    color: white;
+    border: 3px solid white;
+}
+
+.modal-image-container {
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+.modal-image-container img {
+    border-radius: 5%;
+    border: 3px solid #fff;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.modal-content-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.modal-visit-button {
+  background: #fff;
+  border: 2px solid #fff;
+  color: #2a4b9d;
+  padding: 4px 0px;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: 600;
+  text-decoration: none;
+  text-align: center;
+}
+
+.modal-visit-button:hover {
+  background: #2a4b9d;
+  border: 2px solid #fff;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* For Display */
+.plate01-style, .plate02-style, .pump-style {
+    max-width: 600px;
+}
+
+/* Warning Modal */
+.warning-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10000;
+}
+
+.warning-modal-content {
+  background-color: #2a4b9d;
+  padding: 30px;
+  border-radius: 10px;
+  max-width: 500px;
+  width: 90%;
+  text-align: center;
+  box-shadow: 0 4px 20px rgba(247, 245, 245, 0.923);
+  border: 3px solid #fff;
+  animation: pulseWarning 0.5s ease-in-out;
+}
+
+@keyframes pulseWarning {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+#warning-title {
+  color: #fff;
+  margin-bottom: 15px;
+  font-size: 24px;
+}
+
+#warning-message {
+  color: #fff;
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.warning-close-button {
+  background-color: white;
+  color: #2a4b9d;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  border: 3px solid white;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s;
+}
+
+.warning-close-button:hover {
+    background-color: #2a4b9d;
+    color: white;
+}
+
+
+/* Settings Modal */
+.settings-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10000;
+  overflow-y: auto; /* Enable scrolling for the modal background */
+}
+
+.settings-modal-content {
+  background-color: #2a4b9d;
+  color: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  max-width: 400px;
+  width: 90%;
+  text-align: center;
+  max-height: 90vh; /* Limit height to 90% of viewport */
+  overflow-y: auto; /* Enable scrolling for content */
+  box-shadow: 0 4px 20px rgba(247, 245, 245, 0.923);
+  border: 3px solid #fff;
+  margin: 20px 0; /* Add some margin for better spacing */
+}
+
+.time-input-group {
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.time-input-group label {
+  display: block;
+  margin-bottom: 5px;
+  color: white;
+}
+
+.time-input-group input {
+  width: 100%;
+  padding: 8px;
+  /* border: 2px solid #a869e6; */
+  border: 2px solid #193989;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+#saveSettingsButton, .settings-close-button {
+  background-color: white;
+  color: #2a4b9d;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  border: 3px solid white;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s;
+  margin: 5px;
+}
+
+#saveSettingsButton:hover, .settings-close-button:hover {
+  background-color: #193989;
+  color: white;
+}
+
+.settings-section {
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.settings-section h3 {
+    color: white;
+    margin-bottom: 15px;
+}
+
+.threshold-input-group {
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+.threshold-input-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: white;
+}
+
+.threshold-input-group input {
+    width: 100%;
+    padding: 8px;
+    border: 2px solid #193989;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.settings-loading {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(190, 152, 228, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+}
+
+.settings-loading::after {
+    content: "Loading...";
+    color: white;
+    font-size: 18px;
+}
+
+#pumpDuration {
+  width: 100%;
+  padding: 8px;
+  border: 2px solid #193989;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+
+/* For Mobile Devices */
+
+@media (max-width: 600px) {
+
+    .modal {
+        max-width: 300px;
+        font-size: 12px;
+    }
+    .modal-header {
+        font-size: 16px; 
+    }
+
+    .otherProjects-container {
+        left: 10px;
+        /* font-weight: 400; */
+    }
+
+    .modal-exit-button {
+        padding: 2px 4px;
+    }
+
+    /* .setTimePin {
+        padding: 2px 2px;
+        top: 581px;
+        right: 90px;
+    } */
+
+
+}

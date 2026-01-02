@@ -1,0 +1,272 @@
+
+.header-container {
+    position: relative;
+    top: 0px;
+    width: 100%;
+    height: 40px;
+    background-color: rgba(255, 255, 255, 0.6);
+    z-index: 9999;
+}
+
+.otherProjects-container { /* Drop Down display*/
+    position: absolute;
+    top: 3px;
+    left: 43%;
+    z-index: 9999;
+    font-family: Arial, sans-serif;
+}
+
+#otherProjectsDropdown {
+    margin-top: 0px;
+    padding: 8px;
+    width: 190px;
+    font-size: 20px;
+    /* font-weight: bold; */
+    color: black;
+    background-color: transparent;
+    border: 2px solid transparent;
+    padding: 3px 10px;
+    border-radius: 10px;
+    font-family: Arial, sans-serif;
+    z-index: 9999;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: left;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Control Buttons */
+
+.soundPin, .sunPin, .settingsPin, .graphPin, .downloadPin {
+    position: fixed;
+    top: 2px;
+    font-size: 20px;
+    background-color: transparent;
+    border: 2px solid transparent;
+    padding: 3px 5px;
+    border-radius: 10px;
+    z-index: 9999;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: right; 
+}
+
+.soundPin {
+    right: 206px;
+}
+.sunPin {
+    right: 159px;
+}
+.graphPin {
+    right: 112px;
+}
+.downloadPin {
+    right: 65px;
+}
+.settingsPin {
+    right: 20px;
+}
+
+.sunPin:hover, .soundPin:hover, .settingsPin:hover, #otherProjectsDropdown:hover{
+    /* background-color: #be98e4; */
+    background-color: #2a4b9d;
+    color: white;
+}
+
+.settingsPin:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.settingsPin:disabled:hover {
+    background-color: transparent;
+    color: black;
+    border: 2px solid transparent;
+}
+
+
+.graphPin:hover, .downloadPin:hover {
+    /* background-color: #a869e6; */
+    background-color: #193989;
+    color: white;
+}
+
+.graph-container { /* Drop Down display*/
+    position: fixed;
+    top: 40px;
+    right: 20px;
+    z-index: 9999;
+    font-family: Arial, sans-serif;
+}
+
+#graphDataDropdown {
+    margin-top: 5px;
+    padding: 8px;
+    width: 200px;
+    font-size: 17px;
+    /* font-weight: bold; */
+    color: black;
+    background-color: #2a4b9d; /* Light purple background */
+    border: 2px solid #193989;
+    padding: 5px 10px;
+    border-radius: 10px;
+    font-family: Arial, sans-serif;
+    z-index: 9999;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: left;
+}
+
+.hidden {
+    display: none;
+}
+
+.chart-container {
+    position: fixed;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 10000;
+    width: 900px;
+    height: 500px;
+    /* display: flex; ERROR */
+    flex-direction: column;
+    align-items: center;
+}
+
+.close-chart {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    color: #666;
+}
+
+#dataChart {
+    width: 100% !important;
+    height: 100% !important;
+}
+
+/* Dark mode adjustments */
+.dark-mode .chart-container {
+    background: rgba(40, 40, 40, 0.9);
+    color: white;
+}
+
+.dark-mode .close-chart {
+    color: #ccc;
+}
+
+/* Download Dropdown */
+
+.downloadPin:active {
+    transform: scale(0.95);
+    background-color: #193989;
+}
+
+.downloadPin.loading {
+    background-color: #193989;
+    color: white;
+    cursor: wait;
+}
+
+.download-container { /* Drop Down display*/
+    position: fixed;
+    top: 40px;
+    right: 20px;
+    z-index: 9999;
+    font-family: Arial, sans-serif;
+}
+
+#downloadDataDropdown {
+    margin-top: 5px;
+    padding: 8px;
+    width: 200px;
+    font-size: 17px;
+    /* font-weight: bold; */
+    color: black;
+    background-color: #2a4b9d; /* Light purple background */
+    border: 2px solid #193989;
+    padding: 5px 10px;
+    border-radius: 10px;
+    font-family: Arial, sans-serif;
+    z-index: 9999;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: left;
+}
+
+.hidden {
+    display: none;
+}
+
+@media (max-width: 850px) {
+    .otherProjects-container { /* Drop Down display*/
+        position: fixed;
+        top: 2px;
+        left: 2px;
+        z-index: 999;
+        font-family: Arial, sans-serif;
+    }
+}
+
+@media (max-width: 600px) {
+    .soundPin, .sunPin, .settingsPin, .graphPin, .downloadPin {
+        font-size: 14px; 
+        top: 5px;
+    }
+
+    .settingsPin, .graph-container, .download-container {
+        right: 5px;
+    }
+
+    .soundPin {
+        padding: 2px 2px;
+        right: 137px;
+    }
+    .sunPin {
+        padding: 2px 2px;
+        right: 104px;
+    }
+    .graphPin {
+        padding: 2px 2px;
+        right: 71px;
+    }
+    .downloadPin {
+        padding: 2px 2px;
+        right: 38px;
+    }
+    .settingsPin {
+        padding: 2px 2px;
+    }
+
+    .graph-container { /* Drop Down display*/
+        position: fixed;
+        top: 40px;
+        z-index: 9999;
+    }
+    .chart-container {
+        position: fixed;
+        top: 100px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 90%;
+        height: 300px;
+    }
+    .download-container { /* Drop Down display*/
+        position: fixed;
+        top:40px;
+        z-index: 9999;
+        font-family: Arial, sans-serif;
+    }
+}
